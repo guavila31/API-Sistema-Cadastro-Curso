@@ -8,12 +8,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.example.exemplospringdatajpa.model.CategoriaCurso;
-import com.example.exemplospringdatajpa.model.Curso;
-import com.example.exemplospringdatajpa.model.Produto;
-import com.example.exemplospringdatajpa.repository.CategoriaCursoRepository;
-import com.example.exemplospringdatajpa.repository.CursoRepository;
-import com.example.exemplospringdatajpa.repository.ProdutoRepository;
+import com.example.exemplospringdatajpa.models.CategoriaCurso;
+import com.example.exemplospringdatajpa.models.Curso;
+import com.example.exemplospringdatajpa.models.Produto;
+import com.example.exemplospringdatajpa.repositories.CategoriaCursoRepository;
+import com.example.exemplospringdatajpa.repositories.CursoRepository;
+import com.example.exemplospringdatajpa.repositories.ProdutoRepository;
 
 @SpringBootApplication
 public class ExemplospringdatajpaApplication {

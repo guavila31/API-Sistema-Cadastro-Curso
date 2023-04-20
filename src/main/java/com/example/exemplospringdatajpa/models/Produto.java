@@ -1,12 +1,10 @@
-package com.example.exemplospringdatajpa.model;
+package com.example.exemplospringdatajpa.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +15,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Curso {
+public class Produto {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,15 +25,6 @@ public class Curso {
     private String nome;
 
     @Column()
-    private Integer cargaHoraria;
-
-    @ManyToOne
-    @JoinColumn(name = "categoriaCurso_id")
-    private CategoriaCurso categoriaCurso;
-
-    // @OneToMany(mappedBy = "curso")
-    // private List<Estudante> estudantes;
-
-    
+    private Double preco;
 
 }

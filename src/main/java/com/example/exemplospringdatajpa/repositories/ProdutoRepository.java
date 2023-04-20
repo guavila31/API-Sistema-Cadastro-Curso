@@ -1,10 +1,10 @@
-package com.example.exemplospringdatajpa.repository;
+package com.example.exemplospringdatajpa.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.example.exemplospringdatajpa.model.Produto;
+import com.example.exemplospringdatajpa.models.Produto;
 
 public interface ProdutoRepository extends JpaRepository<Produto, Long> {
     

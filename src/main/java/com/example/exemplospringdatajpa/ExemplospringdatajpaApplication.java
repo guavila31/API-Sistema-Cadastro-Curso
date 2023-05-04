@@ -31,29 +31,29 @@ public class ExemplospringdatajpaApplication {
 			// Curso novoCurso;
 			// List<Curso> cursos;
 
-			Produto listarProduto;
-			Produto novoProduto;
-			List<Produto> produtos;
+			// Produto listarProduto;
+			// Produto novoProduto;
+			// List<Produto> produtos;
 
-			System.out.println("*** INSERINDO NOVO PRODUTO***");
-			novoProduto = new Produto((long)0, "Sabre de Luz", 2800.00);
-			novoProduto = produtoRepository.save(novoProduto);
-			novoProduto = new Produto((long)0, "Esfera do Dragão", 7300.00);
-			novoProduto = produtoRepository.save(novoProduto);
+			// System.out.println("*** INSERINDO NOVO PRODUTO***");
+			// novoProduto = new Produto((long)0, "Sabre de Luz", 2800.00);
+			// novoProduto = produtoRepository.save(novoProduto);
+			// novoProduto = new Produto((long)0, "Esfera do Dragão", 7300.00);
+			// novoProduto = produtoRepository.save(novoProduto);
 
 			// System.out.println("*** LISTAR TODOS OS PRODUTOS ***");
 			// produtos = produtoRepository.findAll();
 			// produtos.forEach(c -> {System.out.println("Produto: "+c.getNome());});
 
-			System.out.println("*** LISTAR VALORES ACIMA DE 5000.00 ***");
-			listarProduto = produtoRepository.findByPrecoGreaterThan(5000.00);
-			System.out.println(listarProduto.getNome() + " | Valor: " + listarProduto.getPreco());
+			// System.out.println("*** LISTAR VALORES ACIMA DE 5000.00 ***");
+			// listarProduto = produtoRepository.findByPrecoGreaterThan(5000.00);
+			// System.out.println(listarProduto.getNome() + " | Valor: " + listarProduto.getPreco());
 
-			System.out.println("*** LISTAR VALORES ACIMA DE 5000.00 ***");
-			listarProduto = produtoRepository.findByPrecoLessThan(5000.00);
-			System.out.println(listarProduto.getNome() + " | Valor: " + listarProduto.getPreco());
+			// System.out.println("*** LISTAR VALORES ACIMA DE 5000.00 ***");
+			// listarProduto = produtoRepository.findByPrecoLessThan(5000.00);
+			// System.out.println(listarProduto.getNome() + " | Valor: " + listarProduto.getPreco());
 
-			System.out.println("*** ---------------------- || ---------------------- ***");
+			// System.out.println("*** ---------------------- || ---------------------- ***");
 
 			// System.out.println("*** INSERINDO CATEGORIA CURSO ***");
 			// novaCategoria = new CategoriaCurso((long)0, "Tecnologo", null);

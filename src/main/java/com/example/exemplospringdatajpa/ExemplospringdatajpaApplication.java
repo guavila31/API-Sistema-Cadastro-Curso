@@ -6,14 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.example.exemplospringdatajpa.models.CategoriaCurso;
 import com.example.exemplospringdatajpa.models.Curso;
 import com.example.exemplospringdatajpa.models.Produto;
+import com.example.exemplospringdatajpa.models.Usuario;
 import com.example.exemplospringdatajpa.repositories.CategoriaCursoRepository;
 import com.example.exemplospringdatajpa.repositories.CursoRepository;
 import com.example.exemplospringdatajpa.repositories.ProdutoRepository;
+import com.example.exemplospringdatajpa.repositories.UsuarioRepository;
+import com.example.exemplospringdatajpa.services.security.JwtService;
 
 @SpringBootApplication
 public class ExemplospringdatajpaApplication {
@@ -86,8 +91,22 @@ public class ExemplospringdatajpaApplication {
 		};
 	}
 
-	public static void main(String[] args) {
-		SpringApplication.run(ExemplospringdatajpaApplication.class, args);
-	}
+	public static void main(String[] args){
+		ConfigurableApplicationContext contexto = SpringApplication.run(ExemplospringdatajpaApplication.class);
+				JwtService service = contexto.getBean(JwtService.class);
+				UsuarioRepository usuarioRepository = contexto.getBean(UsuarioRepository.class);
+				PasswordEncoder passwordEncoder = contexto.getBean(PasswordEncoder.class);
+		
+				Usuario usuario = new Usuario(0, "Gustavo", "gustavo.avila@facens.br", passwordEncoder.encode("123"),
+						"Administrador");
+				String token = service.gerarToken(usuario);
+				System.out.println(token);
+				boolean isValid = service.validarToken(token);
+				System.out.println("Token válido? " + isValid);
+				System.out.println("Usuário: " + service.obterLoginUsuario(token));
+		
+				usuarioRepository.save(usuario);
+		}
+		
 
 }
